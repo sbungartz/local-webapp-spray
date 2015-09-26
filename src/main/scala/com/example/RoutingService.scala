@@ -8,7 +8,7 @@ import java.io._
 
 // we don't implement our route structure directly in the service actor because
 // we want to be able to test it independently, without having to spin up an actor
-class MyServiceActor extends Actor with MyService with akka.actor.ActorLogging {
+class RoutingServiceActor extends Actor with RoutingService with akka.actor.ActorLogging {
 
   // the HttpService trait defines only one abstract member, which
   // connects the services environment to the enclosing actor or test
@@ -48,7 +48,7 @@ object Loan {
 }
 
 // this trait defines our service behavior independently from the service actor
-trait MyService extends HttpService {
+trait RoutingService extends HttpService {
   def log: akka.event.LoggingAdapter
    
   val myRoute =
