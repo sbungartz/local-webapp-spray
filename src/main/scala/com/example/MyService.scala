@@ -53,10 +53,6 @@ trait MyService extends HttpService {
    
   val myRoute =
     pathPrefix("api") {
-      path("test" / Rest) { rest => 
-        System.out.println(rest)
-        get { complete { rest } }
-      } ~
       path("storage" / Rest) { pathRest =>
         val homeDir = new File(System.getProperty("user.home"))
         val filePath = new File(homeDir, pathRest)
