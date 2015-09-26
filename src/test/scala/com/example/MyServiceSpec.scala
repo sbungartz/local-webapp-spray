@@ -1,18 +1,20 @@
 package com.example
 
+import akka.event.Logging
 import org.specs2.mutable.Specification
 import spray.testkit.Specs2RouteTest
 import spray.http._
 import StatusCodes._
 
 class MyServiceSpec extends Specification with Specs2RouteTest with MyService {
+  def log = Logging(system, classOf[MyServiceSpec].getName)
   def actorRefFactory = system
   
   "MyService" should {
 
     "return a greeting for GET requests to the root path" in {
       Get() ~> myRoute ~> check {
-        responseAs[String] must contain("Say hello")
+        responseAs[String] must contain("Wassup dawg")
       }
     }
 
