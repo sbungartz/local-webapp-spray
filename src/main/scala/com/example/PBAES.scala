@@ -89,6 +89,7 @@ object PBAES {
       case _: BufferUnderflowException => throw new NotCipherdataException
       case _: InvalidKeyException => throw new NotCipherdataException
       case _: IllegalBlockSizeException => throw new NotCipherdataException
+      case _: BadPaddingException => throw new NotCipherdataException
     }
   }
 }
