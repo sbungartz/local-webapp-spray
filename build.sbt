@@ -1,6 +1,6 @@
 organization  := "de.sbungartz"
 
-version       := "0.1"
+version       := "develop"
 
 scalaVersion  := "2.11.6"
 
